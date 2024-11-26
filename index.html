@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Clientes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="text"], select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://via.placeholder.com/800x200" alt="Imagem de Cabeçalho">
+    <h1>Tabela de Clientes</h1>
+    <table id="clientesTable">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Contato</th>
+                <th>CNPJ</th>
+                <th>Localização</th>
+                <th>Segmento</th>
+                <th>Desafio</th>
+                <th>Status</th> <!-- Nova coluna para Status -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" value="Nobre Alfaiataria"></td>
+                <td><input type="text" value="Greice - 11 99321-1775"></td>
+                <td><input type="text" value="53.794.704/0001-40"></td>
+                <td><input type="text" value="Santo André"></td>
+                <td><input type="text" value="Confecção de vestuário"></td>
+                <td><input type="text" value="Conscientização/engajamento/motivação do time; resgate da importância do vendedor."></td>
+                <td>
+                    <select>
+                        <option value="nada">Nada</option>
+                        <option value="contato01">Contato 01</option>
+                        <option value="agendamento">Agendamento</option>
+                        <option value="sessaoEstrt01">Sessão Estrt. 01</option>
+                        <option value="anCenSalva">An. Cen. Salva</option>
+                        <option value="propAssesEnviada">Prop. Asses. enviada</option>
+                        <option value="negociacao">Negociação</option>
+                        <option value="propAssesAceita">Prop. Asses. Aceita</option>
+                        <option value="progAPgamento">Prog. A Pagamento</option>
+                        <option value="pagtoRealizado">Pagto Realizado</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" value="El Trepat Integrare"></td>
+                <td><input type="text" value="Edu - 11 98173-0989"></td>
+                <td><input type="text" value="43.874.519/0001-01"></td>
+                <td><input type="text" value="São Bernardo do Campo"></td>
+                <td><input type="text" value="Terapia/Treinamentos mentais"></td>
+                <td><input type="text" value="Definir detalhes do projeto de imersão (tempo, custo, número de participantes, metas)."></td>
+                <td>
+                    <select>
+                        <option value="nada">Nada</option>
+                        <option value="contato01">Contato 01</option>
+                        <option value="agendamento">Agendamento</option>
+                        <option value="sessaoEstrt01">Sessão Estrt. 01</option>
+                        <option value="anCenSalva">An. Cen. Salva</option>
+                        <option value="propAssesEnviada">Prop. Asses. enviada</option>
+                        <option value="negociacao">Negociação</option>
+                        <option value="propAssesAceita">Prop. Asses. Aceita</option>
+                        <option value="progAPgamento">Prog. A Pagamento</option>
+                        <option value="pagtoRealizado">Pagto Realizado</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" value="Gaeta Seguros e Consórcios"></td>
+                <td><input type="text" value="Luciana - 11 99186-1696"></td>
+                <td><input type="text" value="15.034.065/0001-25"></td>
+                <td><input type="text" value="São Bernardo do Campo"></td>
+                <td><input type="text" value="Corretora de seguros/consórcios"></td>
+                <td><input type="text" value="Posicionamento no digital, Black Friday; escala de clientes."></td>
+                <td>
+                    <select>
+                        <option value="nada">Nada</option>
+                        <option value="contato01">Contato 01</option>
+                        <option value="agendamento">Agendamento</option>
+                        <option value="sessaoEstrt01">Sessão Estrt. 01</option>
+                        <option value="anCenSalva">An. Cen. Salva</option>
+                        <option value="propAssesEnviada">Prop. Asses. enviada</option>
+                        <option value="negociacao">Negociação</option>
+                        <option value="propAssesAceita">Prop. Asses. Aceita</option>
+                        <option value="progAPgamento">Prog. A Pagamento</option>
+                        <option value="pagtoRealizado">Pagto Realizado</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" value="Verccelli Engenharia"></td>
+                <td><input type="text" value="Estéfanny - 11 96325-2759"></td>
+                <td><input type="text" value="26.696.006/0001-27"></td>
+                <td><input type="text" value="São Bernardo do Campo"></td>
+                <td><input type="text" value="Engenharia civil e ambiental"></td>
+                <td><input type="text" value="Crescimento emergencial para manutenção da empresa."></td>
+                <td>
+                    <select>
+                        <option value="nada">Nada</option>
+                        <option value="contato01">Contato 01</option>
+                        <option value="agendamento">Agendamento</option>
+                        <option value="sessaoEstrt01">Sessão Estrt. 01</option>
+                        <option value="anCenSalva">An. Cen. Salva</option>
+                        <option value="propAssesEnviada">Prop. Asses. enviada</option>
+                        <option value="negociacao">Negociação</option>
+                        <option value="propAssesAceita">Prop. Asses. Aceita</option>
+                        <option value="progAPgamento">Prog. A Pagamento</option>
+                        <option value="pagtoRealizado">Pagto Realizado</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" value="Bella & Louzada Advogados"></td>
+                <td><input type="text" value="Verônica - 11 99202-0761"></td>
+                <td><input type="text" value="45.590.917/0001-21"></td>
+                <td><input type="text" value="Santo André"></td>
+                <td><input type="text" value="Escritório de advocacia"></td>
+                <td><input type="text" value="Posicionamento no digital, escala de clientes e visibilidade."></td>
+                <td>
+                    <select>
+                        <option value="nada">Nada</option>
+                        <option value="contato01">Contato 01</option>
+                        <option value="agendamento">Agendamento</option>
+                        <option value="sessaoEstrt01">Sessão Estrt. 01</option>
+                        <option value="anCenSalva">An. Cen. Salva</option>
+                        <option value="propAssesEnviada">Prop. Asses. enviada</option>
+                        <option value="negociacao">Negociação</option>
+                        <option value="propAssesAceita">Prop. Asses. Aceita</option>
+                        <option value="progAPgamento">Prog. A Pagamento</option>
+                        <option value="pagtoRealizado">Pagto Realizado</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" value="Rosangela"></td>
+                <td><input type="text" value="Não disponível"></td>
+                <td><input type="text" value="Não disponível"></td>
+                <td><input type="text" value="Não disponível"></td>
+                <td><input type="text" value="Representante Comercial"></td>
+                <td><input type="text" value="Melhorar os processos de venda, melhorar a experiência do cliente e garantir maior flexibilidade sem amarras."></td>
+                <td>
+                    <select>
+                        <option value="nada">Nada</option>
+                        <option value="contato01">Contato 01</option>
+                        <option value="agendamento">Agendamento</option>
+                        <option value="sessaoEstrt01">Sessão Estrt. 01</option>
+                        <option value="anCenSalva">An. Cen. Salva</option>
+                        <option value="propAssesEnviada">Prop. Asses. enviada</option>
+                        <option value="negociacao">Negociação</option>
+                        <option value="propAssesAceita">Prop. Asses. Aceita</option>
+                        <option value="progAPgamento">Prog. A Pagamento</option>
+                        <option value="pagtoRealizado">Pagto Realizado</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="addRow()">Adicionar</button>
+    <button onclick="saveJSON()">Salvar como JSON</button>
+    <input type="file" id="fileInput" />
+    <button onclick="loadJSON()">Carregar JSON</button>
+
+    <h3>Adicionar Coluna</h3>
+    <label for="colType">Tipo de coluna:</label>
+    <select id="colType" onchange="toggleOptionsInput()">
+        <option value="text">Texto</option>
+        <option value="dropdown">Dropdown</option>
+    </select>
+    <div id="dropdownOptions" style="display: none;">
+        <label for="dropdownInput">Opções (separadas por vírgula):</label>
+        <input type="text" id="dropdownInput" placeholder="Ex: Opção 1, Opção 2">
+    </div>
+    <label for="colName">Nome da coluna:</label>
+    <input type="text" id="colName" placeholder="Nome da nova coluna">
+    <button onclick="addColumn()">Adicionar Coluna</button>
+
+    <script>
+        function addRow() {
+            const table = document.getElementById("clientesTable").getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            for (let i = 0; i < table.rows[0].cells.length; i++) {
+                const newCell = newRow.insertCell(i);
+                if (i === table.rows[0].cells.length - 1) { // Se for a última coluna (Status)
+                    const select = document.createElement("select");
+                    const options = [
+                        { value: "nada", text: "Nada" },
+                        { value: "contato01", text: "Contato 01" },
+                        { value: "agendamento", text: "Agendamento" },
+                        { value: "sessaoEstrt01", text: "Sessão Estrt. 01" },
+                        { value: "anCenSalva", text: "An. Cen. Salva" },
+                        { value: "propAssesEnviada", text: "Prop. Asses. enviada" },
+                        { value: "negociacao", text: "Negociação" },
+                        { value: "propAssesAceita", text: "Prop. Asses. Aceita" },
+                        { value: "progAPgamento", text: "Prog. A Pagamento" },
+                        { value: "pagtoRealizado", text: "Pagto Realizado" }
+                    ];
+                    options.forEach(option => {
+                        const opt = document.createElement("option");
+                        opt.value = option.value;
+                        opt.text = option.text;
+                        select.appendChild(opt);
+                    });
+                    newCell.appendChild(select);
+                } else {
+                    const input = document.createElement("input");
+                    input.type = "text";
+                    newCell.appendChild(input);
+                }
+            }
+        }
+
+        function toggleOptionsInput() {
+            const colType = document.getElementById("colType").value;
+            const dropdownOptions = document.getElementById("dropdownOptions");
+            dropdownOptions.style.display = (colType === "dropdown") ? "block" : "none";
+        }
+
+        function addColumn() {
+            const table = document.getElementById("clientesTable");
+            const colType = document.getElementById("colType").value;
+            const colName = document.getElementById("colName").value;
+            const dropdownInput = document.getElementById("dropdownInput").value;
+
+            if (!colName) {
+                alert("Por favor, insira um nome para a coluna.");
+                return;
+            }
+
+            // Adiciona o cabeçalho da nova coluna
+            const header = table.getElementsByTagName('thead')[0].rows[0].insertCell(-1);
+            header.innerHTML = colName;
+
+            // Adiciona a nova coluna nas linhas existentes
+            for (let i = 1; i < table.rows.length; i++) {
+                const newRowCell = table.rows[i].insertCell(-1);
+                if (colType === "dropdown") {
+                    const select = document.createElement("select");
+                    const options = dropdownInput.split(',').map(opt => opt.trim());
+                    options.forEach(opt => {
+                        const option = document.createElement("option");
+                        option.value = opt;
+                        option.text = opt;
+                        select.appendChild(option);
+                    });
+                    newRowCell.appendChild(select);
+                } else {
+                    const input = document.createElement("input");
+                    input.type = "text";
+                    newRowCell.appendChild(input);
+                }
+            }
+
+            // Limpa os campos após a adição
+            document.getElementById("colName").value = "";
+            document.getElementById("dropdownInput").value = "";
+            toggleOptionsInput(); // Reseta a visualização
+        }
+
+        function saveJSON() {
+            const table = document.getElementById("clientesTable");
+            const data = [];
+            for (let i = 1, row; row = table.rows[i]; i++) {
+                const rowData = {};
+                for (let j = 0; j < row.cells.length; j++) {
+                    rowData[table.rows[0].cells[j].innerText] = row.cells[j].getElementsByTagName("input")[0]?.value || row.cells[j].getElementsByTagName("select")[0]?.value;
+                }
+                data.push(rowData);
+            }
+            const json = JSON.stringify(data, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'clientes.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        function loadJSON() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const data = JSON.parse(event.target.result);
+                    const table = document.getElementById("clientesTable").getElementsByTagName('tbody')[0];
+                    table.innerHTML = ""; // Limpa a tabela
+                    data.forEach(item => {
+                        const newRow = table.insertRow();
+                        for (const key in item) {
+                            const newCell = newRow.insertCell();
+                            if (item[key] instanceof Array) {
+                                const select = document
