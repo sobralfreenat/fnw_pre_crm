@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: black;
             margin: 0;
             padding: 20px;
         }
@@ -18,11 +18,12 @@
         img {
             display: block;
             margin: 0 auto 20px;
-            max-width: 100%;
+            max-width: 23%;
             height: auto;
         }
         table {
             width: 100%;
+            background-color: darkblue;
             border-collapse: collapse;
             margin-bottom: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -31,16 +32,20 @@
             border: 1px solid #dddddd;
             text-align: left;
             padding: 12px;
+           background-color: darkgray;
         }
         th {
-            background-color: #4CAF50;
-            color: white;
-        }
+    background-color: darkgray;
+    color: #364b4f;
+    position: sticky; /* Faz o cabeçalho ficar fixo */
+    top: 0; /* Fixa o cabeçalho no topo */
+    z-index: 2; /* Garante que o cabeçalho fique acima do conteúdo */
+}
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: darkgray;
         }
         button {
-            background-color: #4CAF50;
+            background-color: black;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -49,12 +54,13 @@
             margin: 5px;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #006a65;
         }
         input[type="text"], select {
-            width: calc(100% - 20px);
+            width: calc(104% - 1px);
             padding: 10px;
             margin-top: 5px;
+            margin-botton: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
@@ -64,8 +70,8 @@
     </style>
 </head>
 <body>
-    <img src="https://via.placeholder.com/800x200" alt="Imagem de Cabeçalho">
-    <h1>Tabela de Clientes</h1>
+    <img src="https://d1yei2z3i6k35z.cloudfront.net/3119789/674665fa6b147_FramweworkpicCRM03.png" alt="Imagem de Cabeçalho">
+    <h1>Leads Sync</h1> <br><br>
     <table id="clientesTable">
         <thead>
             <tr>
@@ -75,7 +81,8 @@
                 <th>Localização</th>
                 <th>Segmento</th>
                 <th>Desafio</th>
-                <th>Status</th> <!-- Nova coluna para Status -->
+                <th>Status</th>
+                <th>Slot</th>
             </tr>
         </thead>
         <tbody>
@@ -100,6 +107,18 @@
                         <option value="pagtoRealizado">Pagto Realizado</option>
                     </select>
                 </td>
+                <td>
+                    <select>
+						<option value="---">---</option>
+                        <option value="C10">C10 (15)</option>
+                        <option value="C11">C11 (15)</option>
+                        <option value="C12">C12 (15)</option>
+                        <option value="D13">D13 (15)</option>
+                        <option value="D14">D14 (15)</option>
+                        <option value="D15">D15 (15)</option>
+                        <option value="D16">D16 (15)</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td><input type="text" value="El Trepat Integrare"></td>
@@ -120,6 +139,18 @@
                         <option value="propAssesAceita">Prop. Asses. Aceita</option>
                         <option value="progAPgamento">Prog. A Pagamento</option>
                         <option value="pagtoRealizado">Pagto Realizado</option>
+                    </select>
+                </td>
+                <td>
+                    <select>
+                        <option value="---">---</option>
+                        <option value="C10">C10 (15)</option>
+                        <option value="C11">C11 (15)</option>
+                        <option value="C12">C12 (15)</option>
+                        <option value="D13">D13 (15)</option>
+                        <option value="D14">D14 (15)</option>
+                        <option value="D15">D15 (15)</option>
+                        <option value="D16">D16 (15)</option>
                     </select>
                 </td>
             </tr>
@@ -144,6 +175,18 @@
                         <option value="pagtoRealizado">Pagto Realizado</option>
                     </select>
                 </td>
+                <td>
+                    <select>
+                        <option value="---">---</option>
+                        <option value="C10">C10 (15)</option>
+                        <option value="C11">C11 (15)</option>
+                        <option value="C12">C12 (15)</option>
+                        <option value="D13">D13 (15)</option>
+                        <option value="D14">D14 (15)</option>
+                        <option value="D15">D15 (15)</option>
+                        <option value="D16">D16 (15)</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td><input type="text" value="Verccelli Engenharia"></td>
@@ -164,6 +207,18 @@
                         <option value="propAssesAceita">Prop. Asses. Aceita</option>
                         <option value="progAPgamento">Prog. A Pagamento</option>
                         <option value="pagtoRealizado">Pagto Realizado</option>
+                    </select>
+                </td>
+                <td>
+                    <select>
+                        <option value="---">---</option>
+                        <option value="C10">C10 (15)</option>
+                        <option value="C11">C11 (15)</option>
+                        <option value="C12">C12 (15)</option>
+                        <option value="D13">D13 (15)</option>
+                        <option value="D14">D14 (15)</option>
+                        <option value="D15">D15 (15)</option>
+                        <option value="D16">D16 (15)</option>
                     </select>
                 </td>
             </tr>
@@ -188,6 +243,18 @@
                         <option value="pagtoRealizado">Pagto Realizado</option>
                     </select>
                 </td>
+                <td>
+                    <select>
+                        <option value="---">---</option>
+                        <option value="C10">C10 (15)</option>
+                        <option value="C11">C11 (15)</option>
+                        <option value="C12">C12 (15)</option>
+                        <option value="D13">D13 (15)</option>
+                        <option value="D14">D14 (15)</option>
+                        <option value="D15">D15 (15)</option>
+                        <option value="D16">D16 (15)</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td><input type="text" value="Rosangela"></td>
@@ -210,14 +277,24 @@
                         <option value="pagtoRealizado">Pagto Realizado</option>
                     </select>
                 </td>
+                <td>
+                    <select>
+                        <option value="---">---</option>
+                        <option value="C10">C10 (15)</option>
+                        <option value="C11">C11 (15)</option>
+                        <option value="C12">C12 (15)</option>
+                        <option value="D13">D13 (15)</option>
+                        <option value="D14">D14 (15)</option>
+                        <option value="D15">D15 (15)</option>
+                        <option value="D16">D16 (15)</option>
+                    </select>
+                </td>
             </tr>
         </tbody>
     </table>
-    <button onclick="addRow()">Adicionar</button>
-    <button onclick="saveJSON()">Salvar como JSON</button>
-    <input type="file" id="fileInput" />
-    <button onclick="loadJSON()">Carregar JSON</button>
-
+   <button onclick="addRow()">Adicionar Lead</button><br>
+   <br><br><br>
+  
     <h3>Adicionar Coluna</h3>
     <label for="colType">Tipo de coluna:</label>
     <select id="colType" onchange="toggleOptionsInput()">
@@ -228,9 +305,17 @@
         <label for="dropdownInput">Opções (separadas por vírgula):</label>
         <input type="text" id="dropdownInput" placeholder="Ex: Opção 1, Opção 2">
     </div>
+    
     <label for="colName">Nome da coluna:</label>
     <input type="text" id="colName" placeholder="Nome da nova coluna">
-    <button onclick="addColumn()">Adicionar Coluna</button>
+   <br><br>
+     <button onclick="addColumn()">Adicionar Coluna</button>
+     <br><br>
+     
+    <button onclick="saveJSON()">Salvar como JSON</button>
+    <input type="file" id="fileInput" />
+    <button onclick="loadJSON()">Carregar JSON</button>
+ <br><br> <br><br> <br><br>
 
     <script>
         function addRow() {
@@ -238,7 +323,26 @@
             const newRow = table.insertRow();
             for (let i = 0; i < table.rows[0].cells.length; i++) {
                 const newCell = newRow.insertCell(i);
-                if (i === table.rows[0].cells.length - 1) { // Se for a última coluna (Status)
+                if (i === table.rows[0].cells.length - 1) { // Se for a última coluna (Slot)
+                    const select = document.createElement("select");
+                    const slots = [
+						{ value: "---", text: "---" },
+                        { value: "C10", text: "C10 (15)" },
+                        { value: "C11", text: "C11 (15)" },
+                        { value: "C12", text: "C12 (15)" },
+                        { value: "D13", text: "D13 (15)" },
+                        { value: "D14", text: "D14 (15)" },
+                        { value: "D15", text: "D15 (15)" },
+                        { value: "D16", text: "D16 (15)" }
+                    ];
+                    slots.forEach(slot => {
+                        const opt = document.createElement("option");
+                        opt.value = slot.value;
+                        opt.text = slot.text;
+                        select.appendChild(opt);
+                    });
+                    newCell.appendChild(select);
+                } else if (i === table.rows[0].cells.length - 2) { // Se for a penúltima coluna (Status)
                     const select = document.createElement("select");
                     const options = [
                         { value: "nada", text: "Nada" },
@@ -246,7 +350,7 @@
                         { value: "agendamento", text: "Agendamento" },
                         { value: "sessaoEstrt01", text: "Sessão Estrt. 01" },
                         { value: "anCenSalva", text: "An. Cen. Salva" },
-                        { value: "propAssesEnviada", text: "Prop. Asses. enviada" },
+                                                { value: "propAssesEnviada", text: "Prop. Asses. enviada" },
                         { value: "negociacao", text: "Negociação" },
                         { value: "propAssesAceita", text: "Prop. Asses. Aceita" },
                         { value: "progAPgamento", text: "Prog. A Pagamento" },
@@ -267,86 +371,126 @@
             }
         }
 
+        function saveJSON() {
+            const table = document.getElementById("clientesTable");
+            const data = [];
+            for (let i = 1; i < table.rows.length; i++) {
+                const row = table.rows[i];
+                const rowData = {};
+                for (let j = 0; j < row.cells.length; j++) {
+                    const cell = row.cells[j];
+                    if (cell.querySelector('input')) {
+                        rowData[table.rows[0].cells[j].innerText] = cell.querySelector('input').value;
+                    } else if (cell.querySelector('select')) {
+                        rowData[table.rows[0].cells[j].innerText] = cell.querySelector('select').value;
+                    }
+                }
+                data.push(rowData);
+            }
+            const json = JSON.stringify(data);
+            const blob = new Blob([json], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "clientes.json";
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function loadJSON() {
+            const fileInput = document.getElementById("fileInput");
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const data = JSON.parse(event.target.result);
+                const table = document.getElementById("clientesTable").getElementsByTagName('tbody')[0];
+                table.innerHTML = ""; // Limpa a tabela
+                data.forEach(rowData => {
+                    const newRow = table.insertRow();
+                    for (const key in rowData) {
+                        const newCell = newRow.insertCell();
+                        if (key === "Status" || key === "Slot") {
+                            const select = document.createElement("select");
+                            const options = key === "Status" ? [
+                                { value: "nada", text: "Nada" },
+                                { value: "contato01", text: "Contato 01" },
+                                { value: "agendamento", text: "Agendamento" },
+                                { value: "sessaoEstrt01", text: "Sessão Estrt. 01" },
+                                { value: "anCenSalva", text: "An. Cen. Salva" },
+                                { value: "propAssesEnviada", text: "Prop. Asses. enviada" },
+                                { value: "negociacao", text: "Negociação" },
+                                { value: "propAssesAceita", text: "Prop. Asses. Aceita" },
+                                { value: "progAPgamento", text: "Prog. A Pagamento" },
+                                { value: "pagtoRealizado", text: "Pagto Realizado" }
+                            ] : [
+								{ value: "---", text: "---" },
+                                { value: "C10", text: "C10 (15)" },
+                                { value: "C11", text: "C11 (15)" },
+                                { value: "C12", text: "C12 (15)" },
+                                { value: "D13", text: "D13 (15)" },
+                                { value: "D14", text: "D14 (15)" },
+                                { value: "D15", text: "D15 (15)" },
+                                { value: "D16", text: "D16 (15)" }
+                            ];
+                            options.forEach(option => {
+                                const opt = document.createElement("option");
+                                opt.value = option.value;
+                                opt.text = option.text;
+                                if (option.value === rowData[key]) {
+                                    opt.selected = true;
+                                }
+                                select.appendChild(opt);
+                            });
+                            newCell.appendChild(select);
+                        } else {
+                            const input = document.createElement("input");
+                            input.type = "text";
+                            input.value = rowData[key];
+                            newCell.appendChild(input);
+                        }
+                    }
+                });
+            };
+            reader.readAsText(file);
+        }
+
         function toggleOptionsInput() {
             const colType = document.getElementById("colType").value;
             const dropdownOptions = document.getElementById("dropdownOptions");
-            dropdownOptions.style.display = (colType === "dropdown") ? "block" : "none";
+            dropdownOptions.style.display = colType === "dropdown" ? "block" : "none";
         }
 
         function addColumn() {
-            const table = document.getElementById("clientesTable");
             const colType = document.getElementById("colType").value;
             const colName = document.getElementById("colName").value;
             const dropdownInput = document.getElementById("dropdownInput").value;
 
-            if (!colName) {
-                alert("Por favor, insira um nome para a coluna.");
-                return;
-            }
+            const table = document.getElementById("clientesTable");
+            const headerRow = table.rows[0];
+            const newHeaderCell = document.createElement("th");
+            newHeaderCell.innerText = colName;
+            headerRow.appendChild(newHeaderCell);
 
-            // Adiciona o cabeçalho da nova coluna
-            const header = table.getElementsByTagName('thead')[0].rows[0].insertCell(-1);
-            header.innerHTML = colName;
-
-            // Adiciona a nova coluna nas linhas existentes
             for (let i = 1; i < table.rows.length; i++) {
-                const newRowCell = table.rows[i].insertCell(-1);
+                const row = table.rows[i];
+                const newCell = row.insertCell();
                 if (colType === "dropdown") {
                     const select = document.createElement("select");
-                    const options = dropdownInput.split(',').map(opt => opt.trim());
-                    options.forEach(opt => {
-                        const option = document.createElement("option");
-                        option.value = opt;
-                        option.text = opt;
-                        select.appendChild(option);
+                    const options = dropdownInput.split(",").map(option => option.trim());
+                    options.forEach(option => {
+                        const opt = document.createElement("option");
+                        opt.value = option;
+                        opt.text = option;
+                        select.appendChild(opt);
                     });
-                    newRowCell.appendChild(select);
+                    newCell.appendChild(select);
                 } else {
                     const input = document.createElement("input");
                     input.type = "text";
-                    newRowCell.appendChild(input);
+                    newCell.appendChild(input);
                 }
             }
-
-            // Limpa os campos após a adição
-            document.getElementById("colName").value = "";
-            document.getElementById("dropdownInput").value = "";
-            toggleOptionsInput(); // Reseta a visualização
         }
-
-        function saveJSON() {
-            const table = document.getElementById("clientesTable");
-            const data = [];
-            for (let i = 1, row; row = table.rows[i]; i++) {
-                const rowData = {};
-                for (let j = 0; j < row.cells.length; j++) {
-                    rowData[table.rows[0].cells[j].innerText] = row.cells[j].getElementsByTagName("input")[0]?.value || row.cells[j].getElementsByTagName("select")[0]?.value;
-                }
-                data.push(rowData);
-            }
-            const json = JSON.stringify(data, null, 2);
-            const blob = new Blob([json], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'clientes.json';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-
-        function loadJSON() {
-            const fileInput = document.getElementById('fileInput');
-            const file = fileInput.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const data = JSON.parse(event.target.result);
-                    const table = document.getElementById("clientesTable").getElementsByTagName('tbody')[0];
-                    table.innerHTML = ""; // Limpa a tabela
-                    data.forEach(item => {
-                        const newRow = table.insertRow();
-                        for (const key in item) {
-                            const newCell = newRow.insertCell();
-                            if (item[key] instanceof Array) {
-                                const select = document
+    </script>
+</body>
+</html>
