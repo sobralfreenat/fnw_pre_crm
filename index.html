@@ -32,15 +32,15 @@
             border: 1px solid #dddddd;
             text-align: left;
             padding: 12px;
-           background-color: darkgray;
+            background-color: darkgray;
         }
         th {
-    background-color: darkgray;
-    color: #364b4f;
-    position: sticky; /* Faz o cabeçalho ficar fixo */
-    top: 0; /* Fixa o cabeçalho no topo */
-    z-index: 2; /* Garante que o cabeçalho fique acima do conteúdo */
-}
+            background-color: darkgray;
+            color: #364b4f;
+            position: sticky; /* Faz o cabeçalho ficar fixo */
+            top: 0; /* Fixa o cabeçalho no topo */
+            z-index: 2; /* Garante que o cabeçalho fique acima do conteúdo */
+        }
         tr:nth-child(even) {
             background-color: darkgray;
         }
@@ -60,7 +60,7 @@
             width: calc(104% - 1px);
             padding: 10px;
             margin-top: 5px;
-            margin-botton: 5px;
+            margin-bottom: 5px; /* Corrigido de "margin-botton" para "margin-bottom" */
             border: 1px solid #ccc;
             border-radius: 4px;
         }
@@ -75,7 +75,7 @@
     <table id="clientesTable">
         <thead>
             <tr>
-                <th>Nome</th>
+                <th>Empresa</th>
                 <th>Contato</th>
                 <th>CNPJ</th>
                 <th>Localização</th>
@@ -83,10 +83,12 @@
                 <th>Desafio</th>
                 <th>Status</th>
                 <th>Slot</th>
+                <th>Origem</th> <!-- Nova coluna -->
+                <th>Follow-up</th> <!-- Nova coluna -->
             </tr>
         </thead>
         <tbody>
-            <tr>
+ <tr>
                 <td><input type="text" value="Nobre Alfaiataria"></td>
                 <td><input type="text" value="Greice - 11 99321-1775"></td>
                 <td><input type="text" value="53.794.704/0001-40"></td>
@@ -119,8 +121,13 @@
                         <option value="D16">D16 (15)</option>
                     </select>
                 </td>
+ </td>
+                <td><input type="text" value="Origem Exemplo"></td> <!-- Nova coluna -->
+                <td><input type="text" value="Follow-up Exemplo"></td> <!-- Nova coluna -->
             </tr>
-            <tr>
+
+
+           <tr>
                 <td><input type="text" value="El Trepat Integrare"></td>
                 <td><input type="text" value="Edu - 11 98173-0989"></td>
                 <td><input type="text" value="43.874.519/0001-01"></td>
@@ -153,6 +160,8 @@
                         <option value="D16">D16 (15)</option>
                     </select>
                 </td>
+                <td><input type="text" value="Origem Exemplo"></td> <!-- Nova coluna -->
+                <td><input type="text" value="Follow-up Exemplo"></td> <!-- Nova coluna -->
             </tr>
             <tr>
                 <td><input type="text" value="Gaeta Seguros e Consórcios"></td>
@@ -187,6 +196,8 @@
                         <option value="D16">D16 (15)</option>
                     </select>
                 </td>
+                <td><input type="text" value="Origem Exemplo"></td> <!-- Nova coluna -->
+                <td><input type="text" value="Follow-up Exemplo"></td> <!-- Nova coluna -->
             </tr>
             <tr>
                 <td><input type="text" value="Verccelli Engenharia"></td>
@@ -221,6 +232,8 @@
                         <option value="D16">D16 (15)</option>
                     </select>
                 </td>
+                <td><input type="text" value="Origem Exemplo"></td> <!-- Nova coluna -->
+                <td><input type="text" value="Follow-up Exemplo"></td> <!-- Nova coluna -->
             </tr>
             <tr>
                 <td><input type="text" value="Bella & Louzada Advogados"></td>
@@ -255,12 +268,14 @@
                         <option value="D16">D16 (15)</option>
                     </select>
                 </td>
+                <td><input type="text" value="Origem Exemplo"></td> <!-- Nova coluna -->
+                <td><input type="text" value="Follow-up Exemplo"></td> <!-- Nova coluna -->
             </tr>
             <tr>
-                <td><input type="text" value="Rosangela"></td>
-                <td><input type="text" value="Não disponível"></td>
-                <td><input type="text" value="Não disponível"></td>
-                <td><input type="text" value="Não disponível"></td>
+                <td><input type="text" value="PR Representações"></td>
+                <td><input type="text" value="Rosangela - 11 94913-7777"></td>
+                <td><input type="text" value="10.643.871/0001-87"></td>
+                <td><input type="text" value="Santo André"></td>
                 <td><input type="text" value="Representante Comercial"></td>
                 <td><input type="text" value="Melhorar os processos de venda, melhorar a experiência do cliente e garantir maior flexibilidade sem amarras."></td>
                 <td>
@@ -289,11 +304,14 @@
                         <option value="D16">D16 (15)</option>
                     </select>
                 </td>
+                <td><input type="text" value="Origem Exemplo"></td> <!-- Nova coluna -->
+                <td><input type="text" value="Follow-up Exemplo"></td> <!-- Nova coluna -->
             </tr>
+            <!-- Outras linhas omitidas para brevidade -->
         </tbody>
     </table>
-   <button onclick="addRow()">Adicionar Lead</button><br>
-   <br><br><br>
+    <button onclick="addRow()">Adicionar Lead</button><br>
+    <br><br><br>
   
     <h3>Adicionar Coluna</h3>
     <label for="colType">Tipo de coluna:</label>
@@ -315,60 +333,72 @@
     <button onclick="saveJSON()">Salvar como JSON</button>
     <input type="file" id="fileInput" />
     <button onclick="loadJSON()">Carregar JSON</button>
- <br><br> <br><br> <br><br>
+    <br><br> <br><br> <br><br>
 
     <script>
         function addRow() {
             const table = document.getElementById("clientesTable").getElementsByTagName('tbody')[0];
             const newRow = table.insertRow();
-            for (let i = 0; i < table.rows[0].cells.length; i++) {
+            // Adiciona 6 campos de entrada
+            for (let i = 0; i < 6; i++) {
                 const newCell = newRow.insertCell(i);
-                if (i === table.rows[0].cells.length - 1) { // Se for a última coluna (Slot)
-                    const select = document.createElement("select");
-                    const slots = [
-						{ value: "---", text: "---" },
-                        { value: "C10", text: "C10 (15)" },
-                        { value: "C11", text: "C11 (15)" },
-                        { value: "C12", text: "C12 (15)" },
-                        { value: "D13", text: "D13 (15)" },
-                        { value: "D14", text: "D14 (15)" },
-                        { value: "D15", text: "D15 (15)" },
-                        { value: "D16", text: "D16 (15)" }
-                    ];
-                    slots.forEach(slot => {
-                        const opt = document.createElement("option");
-                        opt.value = slot.value;
-                        opt.text = slot.text;
-                        select.appendChild(opt);
-                    });
-                    newCell.appendChild(select);
-                } else if (i === table.rows[0].cells.length - 2) { // Se for a penúltima coluna (Status)
-                    const select = document.createElement("select");
-                    const options = [
-                        { value: "nada", text: "Nada" },
-                        { value: "contato01", text: "Contato 01" },
-                        { value: "agendamento", text: "Agendamento" },
-                        { value: "sessaoEstrt01", text: "Sessão Estrt. 01" },
-                        { value: "anCenSalva", text: "An. Cen. Salva" },
-                                                { value: "propAssesEnviada", text: "Prop. Asses. enviada" },
-                        { value: "negociacao", text: "Negociação" },
-                        { value: "propAssesAceita", text: "Prop. Asses. Aceita" },
-                        { value: "progAPgamento", text: "Prog. A Pagamento" },
-                        { value: "pagtoRealizado", text: "Pagto Realizado" }
-                    ];
-                    options.forEach(option => {
-                        const opt = document.createElement("option");
-                        opt.value = option.value;
-                        opt.text = option.text;
-                        select.appendChild(opt);
-                    });
-                    newCell.appendChild(select);
-                } else {
-                    const input = document.createElement("input");
-                    input.type = "text";
-                    newCell.appendChild(input);
-                }
+                const input = document.createElement("input");
+                input.type = "text";
+                newCell.appendChild(input);
             }
+            // Adiciona dropdowns para as colunas "Status" e "Slot"
+            const statusCell = newRow.insertCell(6);
+            const statusSelect = document.createElement("select");
+            const statusOptions = [
+                { value: "nada", text: "Nada" },
+                { value: "contato01", text: "Contato 01" },
+                { value: "agendamento", text: "Agendamento" },
+                { value: "sessaoEstrt01", text: "Sessão Estrt. 01" },
+                { value: "anCenSalva", text: "An. Cen. Salva" },
+                { value: "propAssesEnviada", text: "Prop. Asses. enviada" },
+                { value: "negociacao", text: "Negociação" },
+                { value: "propAssesAceita", text: "Prop. Asses. Aceita" },
+                { value: "progAPgamento", text: "Prog. A Pagamento" },
+                { value: "pagtoRealizado", text: "Pagto Realizado" }
+            ];
+            statusOptions.forEach(option => {
+                const opt = document.createElement("option");
+                opt.value = option.value;
+                opt.text = option.text;
+                statusSelect.appendChild(opt);
+            });
+            statusCell.appendChild(statusSelect);
+
+            const slotCell = newRow.insertCell(7);
+            const slotSelect = document.createElement("select");
+            const slotOptions = [
+                { value: "---", text: "---" },
+                { value: "C10", text: "C10 (15)" },
+                { value: "C11", text: "C11 (15)" },
+                { value: "C12", text: "C12 (15)" },
+                { value: "D13", text: "D13 (15)" },
+                { value: "D14", text: "D14 (15)" },
+                { value: "D15", text: "D15 (15)" },
+                { value: "D16", text: "D16 (15)" }
+            ];
+            slotOptions.forEach(option => {
+                const opt = document.createElement("option");
+                opt.value = option.value;
+                opt.text = option.text;
+                slotSelect.appendChild(opt);
+            });
+            slotCell.appendChild(slotSelect);
+
+            // Adiciona as colunas "Origem" e "Follow-up"
+            const origemCell = newRow.insertCell(8);
+            const origemInput = document.createElement("input");
+            origemInput.type = "text";
+            origemCell.appendChild(origemInput);
+
+            const followupCell = newRow.insertCell(9);
+            const followupInput = document.createElement("input");
+            followupInput.type = "text";
+            followupCell.appendChild(followupInput);
         }
 
         function saveJSON() {
@@ -423,7 +453,7 @@
                                 { value: "progAPgamento", text: "Prog. A Pagamento" },
                                 { value: "pagtoRealizado", text: "Pagto Realizado" }
                             ] : [
-								{ value: "---", text: "---" },
+                                { value: "---", text: "---" },
                                 { value: "C10", text: "C10 (15)" },
                                 { value: "C11", text: "C11 (15)" },
                                 { value: "C12", text: "C12 (15)" },
